@@ -37,6 +37,11 @@ namespace CoreApp.Application.Configurations
             return serviceCollection;
         }
 
+        public static IServiceCollection AddAllHandlers(this IServiceCollection serviceCollection)
+        {
+            return serviceCollection.AddMediatR(Assembly.GetExecutingAssembly());
+        }
+
 
         public static IServiceCollection AddExtensionsApiApplication(this IServiceCollection serviceCollection)
         {

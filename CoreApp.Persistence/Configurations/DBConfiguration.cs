@@ -40,5 +40,14 @@ namespace CoreApp.Persistence.Configurations
                 options.UseMySQL(connectionString);
             });
         }
+
+        public static void UsePostgres<TContext>(IServiceCollection serviceCollection, string connectionString, bool useLazyLoading) where TContext : DbContext
+        {
+            serviceCollection.AddDbContext<TContext>(options =>
+            {
+                options.UseLazyLoadingProxies(useLazyLoading);
+                options.UseNpgsql(connectionString);
+            });
+        }
     }
 }

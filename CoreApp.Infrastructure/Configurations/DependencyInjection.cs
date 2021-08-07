@@ -28,6 +28,9 @@ namespace CoreApp.Infrastructure.Configurations
                 case DataBases.MySql:
                     DBConfiguration.UseMySql<TContext>(serviceCollection, connectionString, useLazyLoading);
                     break;
+                case DataBases.Postgres:
+                    DBConfiguration.UsePostgres<TContext>(serviceCollection, connectionString, useLazyLoading);
+                    break;
                 default:
                     DBConfiguration.UseSqlServer<TContext>(serviceCollection, connectionString, useLazyLoading);
                     break;
@@ -75,6 +78,9 @@ namespace CoreApp.Infrastructure.Configurations
                     break;
                 case DataBases.MySql:
                     DBConfiguration.UseMySql<TContext>(serviceCollection, connectionString, useLazyLoading);
+                    break;
+                case DataBases.Postgres:
+                    DBConfiguration.UsePostgres<TContext>(serviceCollection, connectionString, useLazyLoading);
                     break;
                 default:
                     DBConfiguration.UseSqlServer<TContext>(serviceCollection, connectionString, useLazyLoading);

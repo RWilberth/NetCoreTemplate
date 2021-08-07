@@ -13,6 +13,7 @@ namespace CoreApp.Application.Interfaces
         IEnumerable<T> GetAll(IEnumerable<Expression<Func<T, object>>> includes);
         T Single(Expression<Func<T, bool>> predicate);
         IEnumerable<T> Filter(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> FilterAsync(Expression<Func<T, bool>> predicate);
         bool Create(T entity);
         bool Update(T entity); 
         Task<bool> CreateAsync(T entity);

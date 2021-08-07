@@ -4,6 +4,7 @@
     {
         SqlServer,
         SqlServer2008,
-        MySql
+        MySql,
+        Postgres
     }
 }

@@ -51,6 +51,10 @@ namespace CoreApp.Persistence.Repositories
         {
             return _context.Set<T>().Where(predicate).ToList();
         }
+        public async Task<IEnumerable<T>> FilterAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().Where(predicate).ToListAsync();
+        }
         public IEnumerable<T> Filter(Expression<Func<T, bool>> predicate, List<Expression<Func<T, object>>> includes)
         {
             List<string> includelist = new List<string>();
